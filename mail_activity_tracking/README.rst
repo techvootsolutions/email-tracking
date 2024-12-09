@@ -99,25 +99,25 @@ Display mail status in list view.
 
    |mail_state|
 
-.. |unknown| image:: /mail_activity_tracking/static/img/unknown.png
-.. |waiting| image:: /mail_activity_tracking/static/img/waiting.png
-.. |error| image:: /mail_activity_tracking/static/img/error.png
-.. |sent| image:: /mail_activity_tracking/static/img/sent.png
-.. |delivered| image:: /mail_activity_tracking/static/img/delivered.png
-.. |opened| image:: /mail_activity_tracking/static/img/opened.png
-.. |cc| image:: /mail_activity_tracking/static/img/cc.png
+.. |unknown| image:: /mail_activity_tracking/static/description/unknown.png
+.. |waiting| image:: /mail_activity_tracking/static/description/waiting.png
+.. |error| image:: /mail_activity_tracking/static/description/error.png
+.. |sent| image:: /mail_activity_tracking/static/description/sent.png
+.. |delivered| image:: /mail_activity_tracking/static/description/delivered.png
+.. |opened| image:: /mail_activity_tracking/static/description/opened.png
+.. |cc| image:: /mail_activity_tracking/static/description/cc.png
    :width: 20px
    :height: 20px
-.. |noemail| image:: /mail_activity_tracking/static/img/noemail.png
+.. |noemail| image:: /mail_activity_tracking/static/description/noemail.png
    :width: 20px
    :height: 20px
-.. |anonuser| image:: /mail_activity_tracking/static/img/anon_user.png
-.. |sent_img| image:: /mail_activity_tracking/static/img/sent_img.png
-.. |delivered_img| image:: /mail_activity_tracking/static/img/delivered_img.png
-.. |opened_img| image:: /mail_activity_tracking/static/img/opened_img.png
-.. |failed_msg| image:: /mail_activity_tracking/static/img/failed_msg.png
-.. |rejected_img| image:: /mail_activity_tracking/static/img/rejected_img.png
-.. |mail_state| image:: /mail_activity_tracking/static/img/mail_state_list_view.png
+.. |anonuser| image:: /mail_activity_tracking/static/description/anon_user.png
+.. |sent_img| image:: /mail_activity_tracking/static/description/sent_img.png
+.. |delivered_img| image:: /mail_activity_tracking/static/description/delivered_img.png
+.. |opened_img| image:: /mail_activity_tracking/static/description/opened_img.png
+.. |failed_msg| image:: /mail_activity_tracking/static/description/failed_msg.png
+.. |rejected_img| image:: /mail_activity_tracking/static/description/rejected_img.png
+.. |mail_state| image:: /mail_activity_tracking/static/description/mail_state_list_view.png
 
 
 Credits
@@ -141,6 +141,6 @@ Maintainers
 
 This module is maintained by the Techvoot Solutions.
 
-.. image:: /mail_activity_tracking/static/img/tv-logo-white.svg
+.. image:: /mail_activity_tracking/static/description/tv-logo-white.svg
    :alt: Techvoot Solutions
    :target: https://www.techvoot.com
