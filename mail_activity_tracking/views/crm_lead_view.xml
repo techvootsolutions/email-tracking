@@ -1,0 +1,43 @@
+<odoo>
+
+    <record id="crm_lead_tree_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.tree.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="mail_status" decoration-info="mail_status == 'sent'" decoration-success="mail_status == 'opened'" decoration-warning="mail_status == 'delivered'" decoration-danger="mail_status == 'error'" widget="badge"/>
+                <field name="activity_ids" optional="hide" widget="list_activity"/>
+                <field name="activity_user_id" optional="hide" string="Activity by" widget="many2one_avatar_user"/>
+                <field name="my_activity_date_deadline" optional="hide" string="My Deadline" widget="remaining_days" options="{'allow_order': '1'}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_lead_view_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="website" position="after">
+                <field name="mail_activity_tracking_id" invisible="1"/>
+                <field name="mail_status" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_crm_case_leads_filter_by_status" model="ir.ui.view">
+        <field name="name">view.crm.case.leads.filter.by.status</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='unassigned_leads']" position="after">
+                <filter string="Mail State" name="mail_status" domain="[('mail_status','in',('delivered', 'opened', 'sent', 'error'))]"/>        
+            </xpath>
+            <xpath expr="//filter[@name='city']" position="after">
+                <filter name="mail_status" string="Mail State" context="{'group_by': 'mail_status'}"/>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>

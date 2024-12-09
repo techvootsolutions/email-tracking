@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mail_activity_tracking_group_public","mail_activity_tracking group_public","model_mail_activity_tracking","base.group_public",1,0,0,0
+"access_mail_activity_tracking_group_portal","mail_activity_tracking group_portal","model_mail_activity_tracking","base.group_portal",1,0,0,0
+"access_mail_activity_tracking_group_user","mail_activity_tracking group_user","model_mail_activity_tracking","base.group_user",1,0,0,0
+"access_mail_activity_event_group_user","mail_activity_event group_user","model_mail_activity_event","base.group_user",1,0,0,0
+"access_mail_activity_tracking_group_system","mail_activity_tracking group_system","model_mail_activity_tracking","base.group_system",1,1,1,1
+"access_mail_activity_event_group_system","mail_activity_event group_system","model_mail_activity_event","base.group_system",1,1,1,1

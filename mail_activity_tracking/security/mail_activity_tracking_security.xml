@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<record model="ir.rule" id="mail_activity_tracking_portal_public_rule">
+    <field
+            name="name"
+        >mail_activity_tracking: portal/public: read access on my email trackings</field>
+    <field name="model_id" ref="model_mail_activity_tracking" />
+    <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+    <field
+            name="groups"
+            eval="[Command.link(ref('base.group_portal')), Command.link(ref('base.group_public'))]"
+        />
+    <field name="perm_create" eval="False" />
+    <field name="perm_unlink" eval="False" />
+    <field name="perm_write" eval="False" />
+</record>
+
+</odoo>
