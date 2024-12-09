@@ -9,6 +9,7 @@
     "application": False,
     "installable": True,
     "depends": ["mail", "crm"],
+    "images": ["static/description/email_activity_tracking.gif"],
     "data": [
         "data/tracking_data.xml",
         "security/mail_activity_tracking_security.xml",
