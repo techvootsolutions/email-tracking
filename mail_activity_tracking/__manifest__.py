@@ -5,7 +5,7 @@
     "category": "Social Network",
     "website": "https://www.techvoot.com",
     "author": "Techvoot Solutions",
-    "license": "AGPL-3",
+    "license": "OPL-1",
     "application": False,
     "installable": True,
     "depends": ["mail", "crm"],

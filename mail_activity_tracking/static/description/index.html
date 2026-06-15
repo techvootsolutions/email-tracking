@@ -1,544 +1,611 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
-    <title>Email activity tracking</title>
-    <style type="text/css">
-
-/* used to remove borders from tables and images */
-.borderless, table.borderless td, table.borderless th {
-  border: 0 }
-
-table.borderless td, table.borderless th {
-  /* Override padding for "table.docutils td" with "! important".
-     The right padding separates the table cells. */
-  padding: 0 0.5em 0 0 ! important }
-
-.first {
-  /* Override more specific margin styles with "! important". */
-  margin-top: 0 ! important }
-
-.last, .with-subtitle {
-  margin-bottom: 0 ! important }
-
-.hidden {
-  display: none }
-
-.subscript {
-  vertical-align: sub;
-  font-size: smaller }
-
-.superscript {
-  vertical-align: super;
-  font-size: smaller }
-
-a.toc-backref {
-  text-decoration: none ;
-  color: black }
-
-blockquote.epigraph {
-  margin: 2em 5em ; }
-
-dl.docutils dd {
-  margin-bottom: 0.5em } object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
-  overflow: hidden;
-}
-
-/* Uncomment (and remove this text!) to get bold-faced definition list terms
-dl.docutils dt {
-  font-weight: bold }
-*/
-
-div.abstract {
-  margin: 2em 5em }
-
-div.abstract p.topic-title {
-  font-weight: bold ;
-  text-align: center }
-
-div.admonition, div.attention, div.caution, div.danger, div.error,
-div.hint, div.important, div.note, div.tip, div.warning {
-  margin: 2em ;
-  border: medium outset ;
-  padding: 1em }
-
-div.admonition p.admonition-title, div.hint p.admonition-title,
-div.important p.admonition-title, div.note p.admonition-title,
-div.tip p.admonition-title {
-  font-weight: bold ;
-  font-family: sans-serif }
-
-div.attention p.admonition-title, div.caution p.admonition-title,
-div.danger p.admonition-title, div.error p.admonition-title,
-div.warning p.admonition-title, .code .error {
-  color: red ;
-  font-weight: bold ;
-  font-family: sans-serif }
-
-/* Uncomment (and remove this text!) to get reduced vertical space in
-   compound paragraphs.
-div.compound .compound-first, div.compound .compound-middle {
-  margin-bottom: 0.5em }
-
-div.compound .compound-last, div.compound .compound-middle {
-  margin-top: 0.5em }
-*/
-
-div.dedication {
-  margin: 2em 5em ;
-  text-align: center ;
-  font-style: italic }
-
-div.dedication p.topic-title {
-  font-weight: bold ;
-  font-style: normal }
-
-div.figure {
-  margin-left: 2em ;
-  margin-right: 2em }
-
-div.footer, div.header {
-  clear: both;
-  font-size: smaller }
-
-div.line-block {
-  display: block ;
-  margin-top: 1em ;
-  margin-bottom: 1em }
-
-div.line-block div.line-block {
-  margin-top: 0 ;
-  margin-bottom: 0 ;
-  margin-left: 1.5em }
-
-div.sidebar {
-  margin: 0 0 0.5em 1em ;
-  border: medium outset ;
-  padding: 1em ;
-  background-color: #ffffee ;
-  width: 40% ;
-  float: right ;
-  clear: right }
-
-div.sidebar p.rubric {
-  font-family: sans-serif ;
-  font-size: medium }
-
-div.system-messages {
-  margin: 5em }
-
-div.system-messages h1 {
-  color: red }
-
-div.system-message {
-  border: medium outset ;
-  padding: 1em }
-
-div.system-message p.system-message-title {
-  color: red ;
-  font-weight: bold }
-
-div.topic {
-  margin: 2em }
-
-h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
-h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
-  margin-top: 0.4em }
-
-h1.title {
-  text-align: center }
-
-h2.subtitle {
-  text-align: center }
-
-hr.docutils {
-  width: 75% }
-
-img.align-left, .figure.align-left, object.align-left, table.align-left {
-  clear: left ;
-  float: left ;
-  margin-right: 1em }
-
-img.align-right, .figure.align-right, object.align-right, table.align-right {
-  clear: right ;
-  float: right ;
-  margin-left: 1em }
-
-img.align-center, .figure.align-center, object.align-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table.align-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.align-left {
-  text-align: left }
-
-.align-center {
-  clear: both ;
-  text-align: center }
-
-.align-right {
-  text-align: right }
-
-/* reset inner alignment in figures */
-div.align-right {
-  text-align: inherit }
-
-/* div.align-center * { */
-/*   text-align: left } */
-
-.align-top    {
-  vertical-align: top }
-
-.align-middle {
-  vertical-align: middle }
-
-.align-bottom {
-  vertical-align: bottom }
-
-ol.simple, ul.simple {
-  margin-bottom: 1em }
-
-ol.arabic {
-  list-style: decimal }
-
-ol.loweralpha {
-  list-style: lower-alpha }
-
-ol.upperalpha {
-  list-style: upper-alpha }
-
-ol.lowerroman {
-  list-style: lower-roman }
-
-ol.upperroman {
-  list-style: upper-roman }
-
-p.attribution {
-  text-align: right ;
-  margin-left: 50% }
-
-p.caption {
-  font-style: italic }
-
-p.credits {
-  font-style: italic ;
-  font-size: smaller }
-
-p.label {
-  white-space: nowrap }
-
-p.rubric {
-  font-weight: bold ;
-  font-size: larger ;
-  color: maroon ;
-  text-align: center }
-
-p.sidebar-title {
-  font-family: sans-serif ;
-  font-weight: bold ;
-  font-size: larger }
-
-p.sidebar-subtitle {
-  font-family: sans-serif ;
-  font-weight: bold }
-
-p.topic-title {
-  font-weight: bold }
-
-pre.address {
-  margin-bottom: 0 ;
-  margin-top: 0 ;
-  font: inherit }
-
-pre.literal-block, pre.doctest-block, pre.math, pre.code {
-  margin-left: 2em ;
-  margin-right: 2em }
-
-pre.code .ln { color: grey; } /* line numbers */
-pre.code, code { background-color: #eeeeee }
-pre.code .comment, code .comment { color: #5C6576 }
-pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
-pre.code .literal.string, code .literal.string { color: #0C5404 }
-pre.code .name.builtin, code .name.builtin { color: #352B84 }
-pre.code .deleted, code .deleted { background-color: #DEB0A1}
-pre.code .inserted, code .inserted { background-color: #A3D289}
-
-span.classifier {
-  font-family: sans-serif ;
-  font-style: oblique }
-
-span.classifier-delimiter {
-  font-family: sans-serif ;
-  font-weight: bold }
-
-span.interpreted {
-  font-family: sans-serif }
-
-span.option {
-  white-space: nowrap }
-
-span.pre {
-  white-space: pre }
-
-span.problematic {
-  color: red }
-
-span.section-subtitle {
-  /* font-size relative to parent (h1..h6 element) */
-  font-size: 80% }
-
-table.citation {
-  border-left: solid 1px gray;
-  margin-left: 1px }
-
-table.docinfo {
-  margin: 2em 4em }
-
-table.docutils {
-  margin-top: 0.5em ;
-  margin-bottom: 0.5em }
-
-table.footnote {
-  border-left: solid 1px black;
-  margin-left: 1px }
-
-table.docutils td, table.docutils th,
-table.docinfo td, table.docinfo th {
-  padding-left: 0.5em ;
-  padding-right: 0.5em ;
-  vertical-align: top }
-
-table.docutils th.field-name, table.docinfo th.docinfo-name {
-  font-weight: bold ;
-  text-align: left ;
-  white-space: nowrap ;
-  padding-left: 0 }
-
-/* "booktabs" style (no vertical lines) */
-table.docutils.booktabs {
-  border: 0px;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-  border-collapse: collapse;
-}
-table.docutils.booktabs * {
-  border: 0px;
-}
-table.docutils.booktabs th {
-  border-bottom: thin solid;
-  text-align: left;
-}
-
-h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
-h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
-  font-size: 100% }
-
-ul.auto-toc {
-  list-style-type: none }
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mail Activity Tracking for Odoo | Email Notification Status in Chatter | Techvoot</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Track email notification delivery status directly in Odoo chatter with Techvoot's Mail Activity Tracking. Monitor sent, delivered, opened, and failed statuses per recipient. Compatible with Odoo Community, Enterprise & Odoo.sh." />
+    <meta name="keywords"
+        content="Odoo mail activity tracking, Odoo email tracking, Odoo chatter email status, email notification tracking Odoo, Odoo mail tracking module, Techvoot Odoo apps" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .nav-pills .nav-link {
+            color: #6b7c8e !important;
+            background: transparent !important;
+            border: none !important;
+            transition: all 0.2s;
+        }
+
+        .nav-pills .nav-link:hover {
+            background: #e6f7f8 !important;
+            color: #2fa3a8 !important;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #2fa3a8 !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(47, 163, 168, 0.25) !important;
+        }
     </style>
-  </head>
-  <body>
-    <div class="document" id="email-tracking">
-      <h1 class="title">Email activity tracking</h1>
+</head>
 
-      <p>This module shows email notification tracking status for any messages in
-mail thread (chatter). Each notified partner will have an intuitive icon
-just right to his name.</p>
-      <p>
-        <strong>Table of contents</strong>
-      </p>
-      <div class="contents local topic" id="contents">
-        <ul class="simple">
-          <li>
-            <a class="reference internal" href="#installation" id="toc-entry-1">Installation</a>
-          </li>
-          <li>
-            <a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a>
-          </li>
-          <li>
-            <a class="reference internal" href="#usage" id="toc-entry-3">Usage</a>
-          </li>
-          <li>
-            <a class="reference internal" href="#credits" id="toc-entry-4">Credits</a>
-            <ul>
-              <li>
-                <a class="reference internal" href="#authors" id="toc-entry-5">Authors</a>
-              </li>
-              <li>
-                <a class="reference internal" href="#contributors" id="toc-entry-6">Contributors</a>
-              </li>
-              <li>
-                <a class="reference internal" href="#maintainers" id="toc-entry-7">Maintainers</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="section" id="installation">
-        <h1>
-          <a class="toc-backref" href="#toc-entry-1">Installation</a>
-        </h1>
-        <p>If you’re using a multi-database installation (with or without dbfilter
-option) where /web/databse/selector returns a list of more than one
-database, then you need to add <tt class="docutils literal">mail_activity_tracking</tt> addon to wide load
-addons list (by default, only <tt class="docutils literal">web</tt> addon), setting <tt class="docutils literal">
-          <span class="pre">--load</span>
-        </tt> option.
-For example, <tt class="docutils literal">
-        <span class="pre">--load=web,mail,mail_activity_tracking</span>
-      </tt>
-    </p>
-  </div>
-  <div class="section" id="configuration">
-    <h1>
-      <a class="toc-backref" href="#toc-entry-2">Configuration</a>
-    </h1>
-    <p>As there can be scenarios where sending a tracking img in the email body
-is not desired, there is a global system parameter
-“mail_activity_tracking.tracking_img_disabled” that can be set to True to remove
-the tracking img from all outgoing emails. Note that the <strong>Opened</strong>
-status will not be available in this case.</p>
-  </div>
-  <div class="section" id="usage">
-    <h1>
-      <a class="toc-backref" href="#toc-entry-3">Usage</a>
-    </h1>
-    <p>When user sends a message in mail_thread (chatter), for instance in
-partner form, then an email tracking is created for each email
-notification. Then a status icon will appear just right to name of
-notified partner.</p>
-    <p>These are all available status icons:</p>
-    <p>
-      <img alt="unknown" src="unknown.png" />
-      <strong>Unknown</strong>: No email tracking info available. Maybe this
-notified partner has ‘Receive Inbox Notifications by Email’ == ‘Never’</p>
-    <p>
-      <img alt="waiting" src="waiting.png" />
-      <strong>Waiting</strong>: Waiting to be sent</p>
-    <p>
-      <img alt="error" src="error.png" />
-      <strong>Error</strong>: Error while sending</p>
-    <p>
-      <img alt="sent" src="sent.png" />
-      <strong>Sent</strong>: Sent to SMTP server configured</p>
-    <p>
-      <img alt="delivered" src="delivered.png" />
-      <strong>Delivered</strong>: Delivered to final MX server</p>
-    <p>
-      <img alt="opened" src="opened.png" />
-      <strong>Opened</strong>: Opened by partner</p>
-    <p>
-      <img alt="cc" style="width: 20px; height: 20px;" src="cc.png" />
-      <strong>Cc</strong>: It’s a Carbon-Copy recipient. Can’t know the status so is
-‘Unknown’</p>
-    <p>
-      <img alt="noemail" style="width: 20px; height: 20px;" src="noemail.png" />
-      <strong>No Email</strong>: The partner doesn’t have a defined email</p>
-    <p>
-      <img alt="anonuser" src="anon_user.png" />
-      <strong>No Partner</strong>: The recipient doesn’t have a defined partner</p>
-    <p>If you want to see all tracking emails and events you can go to</p>
-    <ul class="simple">
-      <li>Settings &gt; Technical &gt; Email &gt; Tracking emails</li>
-      <li>Settings &gt; Technical &gt; Email &gt; Tracking events</li>
-    </ul>
-    <p>When a message generated an 'sent' status. In any view with chatter can show the messages too.</p>
-    <ul>
-      <li>
-        <p class="first">Sent</p>
-        <p>
-          <img alt="image2" src="sent_img.png" />
-        </p>
-      </li>
-    </ul>
-    <p>When a message moved on 'delivered' status.</p>
-    <ul>
-      <li>
-        <p class="first">Delivered</p>
-        <p>
-          <img alt="image2" src="delivered_img.png" />
-        </p>
-      </li>
-    </ul>
-    <p>When a message moved on 'opened' status.</p>
-    <ul>
-      <li>
-        <p class="first">Opened</p>
-        <p>
-          <img alt="image2" src="opened_img.png" />
-        </p>
-      </li>
-    </ul>
-    <p>When the message generates an ‘error’ status, it will apear on discuss
-‘Failed’ channel. Any view with chatter can also display failed messages.</p>
-    <ul>
-      <li>
-        <p class="first">Discuss</p>
-        <p>
-          <img alt="image" src="failed_msg.png" />
-        </p>
-      </li>
-      <li>
-        <p class="first">Chatter</p>
-        <p>
-          <img alt="image" src="rejected_img.png" />
-        </p>
-      </li>
-    </ul>
-    <p>Display mail status in list view.</p>
-    <ul>
-      <li>
-        <p class="first">Mail State</p>
-        <p>
-          <img alt="image2" src="mail_state_list_view.png" />
-        </p>
-      </li>
-    </ul>
-  </div>
-  <div class="section" id="credits">
-    <h1>
-      <a class="toc-backref" href="#toc-entry-4">Credits</a>
-    </h1>
-    <div class="section" id="authors">
-      <h2>
-        <a class="toc-backref" href="#toc-entry-5">Authors</a>
-      </h2>
-      <ul class="simple">
-        <li>Techvoot Solutions</li>
-      </ul>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; margin: 0; padding: 0;">
+
+    <div style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; width: 100%;">
+
+        <!-- ══════════════════════════════════════════
+         HEADER
+    ══════════════════════════════════════════ -->
+        <div class="bg-white shadow border-bottom border-2">
+            <div class="row gy-3">
+                <div class="col-md-4">
+                    <a class="btn p-1" style="padding: 4px; display: inline-block;">
+                        <img src="images/techvoot.svg" alt="techvoot-logo"
+                            style="height:36px !important; width: auto !important; display: block;">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <a href="https://apps.odoo.com/apps/modules/browse?search=techvoot" target="_blank" class="btn btn-sm mb-2 mb-lg-0 p-2" style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i class="fa fa-hand-o-right mr-1"></i> <span class="d-none d-sm-inline">Techvoot</span> All Apps</a>
+                    </div>
+                </div>
+                <div class="col-md-4 gap-2 hstack justify-content-end">
+                    <span class="btn btn-sm p-2" style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i class="fa fa-check"></i> Community</span>
+                    <span class="btn btn-sm p-2" style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i class="fa fa-check"></i> Enterprise</span>
+                    <span class="btn btn-sm p-2" style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i class="fa fa-check"></i> Odoo.sh</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+        <div
+            style="background: linear-gradient(135deg, #e6f7f8 0%, #f0fbfb 50%, #ffffff 100%); padding: 56px 24px 40px; text-align: center; position: relative;">
+            <h1
+                style="font-size: 32px; font-weight: 800; color: #2fa3a8; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0;">
+                Mail Activity Tracking for Odoo</h1>
+            <span
+                style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
+            <p style="font-size: 15px; color: #3d4f61; max-width: 740px; margin: 20px auto 0; line-height: 1.8;">
+                Never wonder whether your important notifications reached their recipients.
+                <b>Techvoot's Mail Activity Tracking</b> provides real-time email notification
+                tracking directly in Odoo chatter, displaying clear status indicators beside
+                each recipient so users can quickly monitor message delivery and engagement.
+            </p>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+         PAIN → SOLUTION + STATS
+    ══════════════════════════════════════════ -->
+        <div style="padding: 52px 0; background: #ffffff;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 28px;">
+                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Overview</h2>
+                    <span
+                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
+                </div>
+                <div class="row justify-content-center" style="margin-bottom: 40px;">
+                    <div class="col-lg-10">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 22px 28px; box-shadow: 0 4px 20px rgba(47,163,168,.10); font-size: 15px; color: #3d4f61; line-height: 1.85;">
+                            Odoo chatter makes communication easy, but it does <b style="color: #1a2332;">not always provide clear visibility</b>
+                            into the delivery status of email notifications. Users often have no way to quickly determine
+                            whether a notification was successfully sent, delivered, opened, or encountered an issue.
+                            <br><br>
+                            <b style="color: #1a2332;">Mail Activity Tracking</b> solves this challenge by displaying intuitive email notification
+                            tracking statuses directly within the chatter. Each notified recipient is shown with a visual
+                            status indicator, allowing users to instantly monitor message delivery, improve communication
+                            transparency, and ensure important notifications reach their intended recipients. Whether you
+                            manage <b style="color: #1a2332;">internal teams or customer communications</b>, it works seamlessly for both
+                            <b style="color: #1a2332;">Community and Enterprise</b> versions, including <b style="color: #1a2332;">Odoo.sh</b>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
+                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">100%</div>
+                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Email
+                                Notification Tracking</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
+                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">Real-Time</div>
+                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Recipient
+                                Status Visibility</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
+                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">v17</div>
+                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Compatible
+                                with Odoo 17</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+         KEY FEATURES
+    ══════════════════════════════════════════ -->
+        <div style="padding: 52px 0; background: #f0fbfb;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 40px;">
+                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Key Features</h2>
+                    <span
+                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
+                    <p
+                        style="font-size: 15px; color: #6b7c8e; max-width: 640px; margin: 10px auto 0; line-height: 1.7;">
+                        Everything your team needs to monitor email notification delivery and recipient engagement directly from Odoo chatter.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Email Notification Tracking</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">Monitor the
+                                    status of every email notification sent from Odoo chatter in real time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Recipient-Level Visibility</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">View tracking
+                                    information individually for each notified recipient directly in the chatter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Delivery Status Indicators</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">Quickly
+                                    identify whether notifications were sent, delivered, opened, or failed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Visual Status Icons</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">Intuitive icons
+                                    displayed next to recipient names make tracking simple and user-friendly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-comments"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Native Chatter Integration</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">Works
+                                    seamlessly within Odoo chatter without requiring external tools or additional interfaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-bottom: 4px solid #2fa3a8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 3px 16px rgba(47,163,168,.10); height: 100%; display: flex; gap: 14px; align-items: flex-start;">
+                            <div
+                                style="width: 42px; height: 42px; flex-shrink: 0; background: #e6f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2fa3a8; font-size: 18px;">
+                                <i class="fa fa-shield"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 5px;">
+                                    Improved Communication Transparency</div>
+                                <p style="font-size: 15px; color: #6b7c8e; line-height: 1.6; margin: 0;">Ensure important
+                                    business communications are tracked and monitored with confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why choose block -->
+                <div class="row justify-content-center" style="margin-top: 20px;">
+                    <div class="col-lg-10">
+                        <div
+                            style="background: #ffffff; border: 1px solid #d4edef; border-radius: 14px; padding: 32px 36px; box-shadow: 0 4px 22px rgba(0,0,0,.06);">
+                            <h3
+                                style="font-size: 20px; font-weight: 800; color: #2fa3a8; margin-top: 0; margin-bottom: 14px;">
+                                <i class="fa fa-star" style="margin-right: 8px;"></i>Why Businesses Choose This Odoo
+                                Mail Activity Tracking Module
+                            </h3>
+                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">Email
+                                notifications are a critical part of daily business operations in Odoo. However,
+                                standard Odoo provides limited visibility into whether recipients actually receive or
+                                interact with those notifications. This can lead to missed communications, delayed
+                                follow-ups, and uncertainty when managing customer or internal interactions.
+                            </p>
+                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">
+                                <b>Techvoot's Mail Activity Tracking</b> enhances Odoo chatter by providing clear,
+                                recipient-level email tracking information directly within the interface. Users can
+                                instantly identify notification delivery statuses through intuitive visual indicators,
+                                improving accountability, communication efficiency, and overall user experience.
+                            </p>
+                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 0;">Compatible
+                                with <b>Odoo Community, Enterprise, and Odoo.sh</b>, this module integrates
+                                seamlessly into existing workflows and helps organizations maintain complete visibility
+                                over important business communications. Trusted by businesses across sales, customer
+                                support, and internal operations teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+         TABS
+    ══════════════════════════════════════════ -->
+        <div style="padding: 52px 0; background: #ffffff;">
+            <div class="container">
+                <!-- Tab Nav -->
+                <div
+                    style="background: #ffffff; border-radius: 16px 16px 0 0; padding: 8px 12px 0; box-shadow: 0 -2px 16px rgba(47,163,168,.07); display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 3px solid #e6f7f8;">
+                    <ul class="nav nav-pills justify-content-center" role="tablist"
+                        style="border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; width: 100%; gap: 6px; margin: 0; padding: 0; list-style: none;">
+                        <li style="margin: 0;">
+                            <a class="nav-link active" data-toggle="tab" data-bs-toggle="tab" href="#tab-docs"
+                                role="tab"
+                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
+                                <i class="fa fa-book" style="margin-right: 5px;"></i> Documentation
+                            </a>
+                        </li>
+                        <li style="margin: 0;">
+                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-release" role="tab"
+                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
+                                <i class="fa fa-tag" style="margin-right: 5px;"></i> Releases
+                            </a>
+                        </li>
+                        <li style="margin: 0;">
+                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-faq" role="tab"
+                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
+                                <i class="fa fa-question-circle" style="margin-right: 5px;"></i> FAQs
+                            </a>
+                        </li>
+                        <li style="margin: 0;">
+                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-support" role="tab"
+                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
+                                <i class="fa fa-life-ring" style="margin-right: 5px;"></i> Support
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content"
+                    style="background: #ffffff; border-radius: 0 0 16px 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); padding: 36px 28px; border: 1px solid #d4edef; border-top: none;">
+                    <div id="tab-docs" class="tab-pane active show" role="tabpanel">
+                        <!-- Step 1 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>Open any document that supports chatter functionality and post a message to notify recipients.</li>
+                                </ul>
+                            </div>
+                            <img src="s01.png" alt="Post Message in Chatter" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>Select the recipients who should receive the email notification from the chatter message.</li>
+                                </ul>
+                            </div>
+                            <img src="s02.png" alt="Select Email Recipients" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>Send the message and allow Odoo to generate email notifications for the selected recipients.</li>
+                                </ul>
+                            </div>
+                            <img src="s03.png" alt="Send Chatter Message" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>View the notification tracking information directly within the chatter message.</li>
+                                </ul>
+                            </div>
+                            <img src="s04.png" alt="View Notification Tracking" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>Each notified recipient is displayed with an intuitive status icon indicating the current email status.</li>
+                                </ul>
+                            </div>
+                            <img src="s05.png" alt="Recipient Status Icons" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 10px;">
+                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
+                                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
+                                    <li>Quickly monitor whether notifications were sent successfully, delivered, opened, or encountered delivery issues.</li>
+                                </ul>
+                            </div>
+                            <img src="s06.png" alt="Monitor Delivery Status" style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+                        </div>
+                    </div>
+
+                    <!-- ── RELEASES ── -->
+                    <div id="tab-release" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
+                        <div
+                            style="background: #f0fbfb; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 20px 24px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                <i class="fa fa-code-fork"
+                                    style="color: #2fa3a8; font-size: 18px; margin-right: 8px;"></i>
+                                <span>Version 17.0.1.0</span>
+                                <span style="color: #aaa; margin: 0 5px;">|</span>
+                                <span style="color: #2fa3a8;">Released on: 09<sup>th</sup> December 2024</span>
+                            </div>
+                            <div style="padding-top: 14px; display: flex; align-items: center; gap: 10px;">
+                                <span
+                                    style="background: #2fa3a8; color: #ffffff; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 4px; margin-right: 10px;">Initial</span>
+                                <span style="font-size: 15px; color: #3d4f61;">Initial Release.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── FAQs ── -->
+                    <div id="tab-faq" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                Is This App Compatible With Odoo Community?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                Yes, this app works perfectly with Odoo Community.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                Is This App Compatible With Odoo Enterprise?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                Yes, this app works perfectly with Odoo Enterprise.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                What Does Mail Activity Tracking Do?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                This module displays email notification tracking information directly in Odoo chatter, helping users monitor notification delivery and recipient status.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                Where Can I View Email Notification Statuses?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                Notification statuses are displayed directly within the chatter alongside the recipients of each message.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                What Types Of Statuses Can Be Tracked?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                The module helps users identify notification delivery statuses such as sent, delivered, opened, and other available tracking states supported by Odoo.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                Does This Module Require Additional Configuration?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                No. After installation, the tracking information becomes available directly within Odoo chatter.
+                            </div>
+                        </div>
+                        <div
+                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
+                            <div
+                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
+                                <i class="fa fa-chevron-right"
+                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
+                                I Want Some Customization In This App. How Can I Request It?
+                            </div>
+                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
+                                Please contact us at <a href="mailto:hello@techvoot.com"
+                                    style="color: #2fa3a8; font-weight: 600; text-decoration: none;">hello@techvoot.com</a>
+                                to request customization.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SUPPORT ── -->
+                    <div id="tab-support" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 col-md-8">
+                                <div
+                                    style="background: linear-gradient(135deg, #e6f7f8 0%, #ffffff 100%) !important; border: 2px solid #2fa3a8 !important; border-radius: 16px !important; padding: 36px 28px !important; text-align: center !important; box-shadow: 0 6px 20px rgba(47,163,168,.08);">
+                                    <div
+                                        style="font-size: 48px !important; color: #2fa3a8 !important; margin-bottom: 16px !important;">
+                                        <i class="fa fa-envelope-open-o"></i>
+                                    </div>
+                                    <h4
+                                        style="font-size: 20px !important; font-weight: 800 !important; color: #1a2332 !important; margin-bottom: 8px !important; margin-top: 0;">
+                                        Need Help? We're Here!</h4>
+                                    <p
+                                        style="font-size: 15px !important; color: #6b7c8e !important; margin-bottom: 20px !important; line-height: 1.6;">
+                                        Reach out to our team for any technical support, installation help, or
+                                        customization requests. We typically respond within 24 hours.</p>
+                                    <a href="mailto:hello@techvoot.com"
+                                        style="display: inline-flex !important; align-items: center !important; gap: 8px !important; background: #2fa3a8 !important; color: #ffffff !important; font-size: 15px !important; font-weight: 700 !important; padding: 12px 28px !important; border-radius: 30px !important; text-decoration: none !important; box-shadow: 0 4px 16px rgba(47,163,168,.35) !important;">
+                                        <i class="fa fa-envelope" style="margin-right: 5px;"></i> hello@techvoot.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end tab-content-wrap -->
+
+
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+         OUR SERVICES
+    ══════════════════════════════════════════ -->
+    <section class="md_services" style="padding: 50px 0px; background-color: transparent;">
+        <div class="container">
+            <div class="md_center text-center mb-5">
+                <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Our Services</h2>
+                <span style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <div style="background-color: #dfd7ff; border: 2px solid #9284d2; border-radius: 0.25rem !important; display: block; text-decoration: none; position: relative" class="box p-4 shadow rounded mb-2 position-relative">
+                        <img src="info.png" alt="mobileapp" style="height: 55px; display: block; margin-bottom: 8px;" class="mx-auto">
+                        <p style="display: block; font-size: 18px; color: #604eaf; font-weight: bold; display: block; margin-bottom: 0;">Odoo Implementation</p>
+                        <a href="https://www.techvoot.com/odoo/odoo-implementation" target="_blank" class="fixed-top position-absolute h-100"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div style="background-color: #ffcee2; border: 2px solid #c5648c; border-radius: 0.25rem !important; display: block; text-decoration: none; position: relative;" class="box p-4 shadow rounded mb-2 position-relative">
+                        <img src="setting.png" alt="mobileapp" style="height: 55px; display: block; margin-bottom: 8px;" class="mx-auto">
+                        <p style="display: block; font-size: 18px; color: #b54574; font-weight: bold; display: block; margin-bottom: 0;">Odoo Customization</p>
+                        <a href="https://www.techvoot.com/odoo/odoo-customisation" target="_blank"  class="fixed-top position-absolute h-100"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div style="background-color: #dfe8b4; border: 2px solid #97a362; border-radius: 0.25rem !important; display: block; text-decoration: none; position: relative;" class="box p-4 shadow rounded mb-2 position-relative">
+                        <img src="user.png" alt="mobileapp" style="height: 55px; display: block; margin-bottom: 8px;" class="mx-auto">
+                        <p style="display: block; font-size: 18px; color: #7f9037; font-weight: bold; display: block; margin-bottom: 0;">Odoo Consulting</p>
+                        <a href="https://www.techvoot.com/odoo/odoo-consulting" target="_blank" class="fixed-top position-absolute h-100"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div style="background-color: #eaddca; border: 2px solid #a38762; border-radius: 0.25rem !important; display: block; text-decoration: none; position: relative;" class="box p-4 shadow rounded mb-2 position-relative">
+                        <img src="mobileapp.png" alt="mobileapp" style="height: 55px; display: block; margin-bottom: 8px;" class="mx-auto">
+                        <p style="display: block; font-size: 18px; color: #946d38; font-weight: bold; display: block; margin-bottom: 0;">Odoo Migration</p>
+                        <a href="https://www.techvoot.com/odoo/odoo-migration" target="_blank" class="fixed-top position-absolute h-100"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+        <!-- ══════════════════════════════════════════
+         CTA BUTTONS
+    ══════════════════════════════════════════ -->
+        <div style="padding: 52px 0; background: #ffffff;">
+            <div class="container">
+                <div class="row justify-content-center"
+                    style="margin: 0 -6px; display: flex; justify-content: center; flex-wrap: wrap;">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 mb-2">
+                        <a href="https://www.techvoot.com/" target="_blank"
+                            style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; padding: 16px 28px !important; border-radius: 12px !important; font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; color: #ffffff !important; background: #2fa3a8 !important; box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important; text-align: center;">
+                            <i class="fa fa-globe"
+                                style="font-size: 24px !important; color: #ffffff !important; margin-right: 8px;"></i>
+                            Website
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 mb-2">
+                        <a href="mailto:hello@techvoot.com" target="_blank"
+                            style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; padding: 16px 28px !important; border-radius: 12px !important; font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; color: #ffffff !important; background: #ce493b !important; box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important; text-align: center;">
+                            <i class="fa fa-envelope"
+                                style="font-size: 24px !important; color: #ffffff !important; margin-right: 8px;"></i>
+                            Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="section" id="contributors">
-      <h2>
-        <a class="toc-backref" href="#toc-entry-6">Contributors</a>
-      </h2>
-      <ul class="simple">
-        <li>
-          <a class="reference external" href="https://www.techvoot.com">Techvoot Solutions</a>:
-          <ul>
-            <li>Kevin Baldha</li>
-            <li>Dhaval Baldha</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="section" id="maintainers">
-      <h2>
-        <a class="toc-backref" href="#toc-entry-7">Maintainers</a>
-      </h2>
-      <p>This module is maintained by the Techvoot Solutions.</p>
-      <a class="reference external image-reference" href="https://www.techvoot.com">
-        <img alt="Techvoot Solutions" src="tv-logo-white.svg"/>
-      </a>
-    </div>
-  </div>
-</div>
+
 </body>
+
 </html>
