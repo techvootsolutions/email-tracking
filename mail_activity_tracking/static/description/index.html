@@ -1,781 +1,2107 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Mail Activity Tracking for Odoo 17 App Store (Bootstrap 5 fragment, no custom CSS/JS) -->
 
-<head>
-    <title>Mail Activity Tracking for Odoo | Email Notification Status in Chatter | Techvoot</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Track email notification delivery status directly in Odoo chatter with Techvoot's Mail Activity Tracking. Monitor sent, delivered, opened, and failed statuses per recipient. Compatible with Odoo Community, Enterprise & Odoo.sh." />
-    <meta name="keywords"
-        content="Odoo mail activity tracking, Odoo email tracking, Odoo chatter email status, email notification tracking Odoo, Odoo mail tracking module, Techvoot Odoo apps" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<section style="background-color: #ffffff; border-bottom: 1px solid #e8f8f8">
+  <div class="container py-3">
+    <div class="row align-items-center g-3">
+      <div class="col-lg-4 col-md-12 col-12 text-center text-lg-start">
+        <img src="images/techvoot.svg" alt="Techvoot Solutions" class="img-fluid" style="height: 36px; width: auto" />
+      </div>
+      <div class="col-lg-4 col-md-12 col-12 text-center">
+        <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+          Odoo 17
+        </span>
+        <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+          Community
+        </span>
+        <span class="badge rounded-pill me-1 mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+          Enterprise
+        </span>
+        <span class="badge rounded-pill mb-1" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #d4edef;
+            font-size: 11px;
+            padding: 8px 14px;
+          ">
+          Odoo.sh
+        </span>
+      </div>
+      <div class="col-lg-4 col-md-12 col-12 text-center text-lg-end">
+        <span class="d-inline-block px-3 py-2 rounded-pill fw-bold small"
+          style="background-color: #e8f8f8; color: #1f7d82">www.techvoot.com</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <style>
-        .nav-pills .nav-link {
-            color: #6b7c8e !important;
-            background: transparent !important;
-            border: none !important;
-            transition: all 0.2s;
-        }
+<!-- ==================== HERO SECTION ==================== -->
+<section style="background-color: #f0fbfb">
+  <div class="container py-5 px-4">
+    <div class="row align-items-center g-5">
+      <!-- ==================== LEFT CONTENT ==================== -->
+      <div class="col-lg-6 col-md-12 col-12">
+        <!-- Badge -->
+        <span class="badge rounded-pill mb-3" style="
+            background-color: #e7f7f7;
+            color: #1f7d82;
+            border: 1px solid #cceced;
+            font-size: 11px;
+            padding: 8px 16px;
+            letter-spacing: 1px;
+            font-weight: 600;
+          ">
+          REAL-TIME EMAIL NOTIFICATION TRACKING
+        </span>
 
-        .nav-pills .nav-link:hover {
-            background: #e6f7f8 !important;
-            color: #2fa3a8 !important;
-        }
+        <!-- Heading -->
+        <h1 class="fw-bold mb-3" style="color: #1b325f; font-size: 38px; line-height: 1.15">
+          Mail Activity Tracking for Odoo 17
+        </h1>
 
-        .nav-pills .nav-link.active {
-            background-color: #2fa3a8 !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(47, 163, 168, 0.25) !important;
-        }
-    </style>
-</head>
+        <!-- Description -->
+        <p class="mb-4" style="color: #5a6d85; font-size: 16px; line-height: 1.75">
+          Never wonder whether your important notifications reached their recipients. Display real-time email delivery
+          statuses directly inside Odoo chatter with recipient-level tracking icons.
+        </p>
 
-<body style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; margin: 0; padding: 0;">
+        <!-- Feature Badges -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            100% Chatter Integration
+          </span>
 
-    <div style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f7fafa; color: #1a2332; width: 100%;">
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            Recipient-Level Visibility
+          </span>
 
-        <!-- ══════════════════════════════════════════
-         HEADER
-    ══════════════════════════════════════════ -->
-        <div class="bg-white shadow border-bottom border-2">
-            <div class="row gy-3">
-                <div class="col-md-4">
-                    <a class="btn p-1" style="padding: 4px; display: inline-block;">
-                        <img src="images/techvoot.svg" alt="techvoot-logo"
-                            style="height:36px !important; width: auto !important; display: block;">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <a href="https://apps.odoo.com/apps/modules/browse?search=techvoot" target="_blank"
-                            class="btn btn-sm mb-2 mb-lg-0 p-2"
-                            style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                                class="fa fa-hand-o-right mr-1"></i> <span class="d-none d-sm-inline">Techvoot</span>
-                            All Apps</a>
-                    </div>
-                </div>
-                <div class="col-md-4 gap-2 hstack justify-content-end">
-                    <!-- <span
-                        style="display: inline-flex; align-items: center; gap: 5px; background: transparent; background-color: #2fa3a8; color: #ffffff; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-right: 4px;"><i
-                            class="fa fa-check" style="margin-right: 4px;"></i> Community</span> -->
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Community</span>
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Enterprise</span>
-                    <span class="btn btn-sm p-2"
-                        style="font-size: 13px;font-size: 14px; font-weight: 500;background-color: #2fa3a8; color: #ffffff;"><i
-                            class="fa fa-check"></i> Odoo.sh</span>
-                </div>
-            </div>
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            Real-Time Status Updates
+          </span>
+
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            Sent, Delivered, Opened &amp; Failed
+          </span>
+
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            Community &amp; Enterprise Ready
+          </span>
+
+          <span class="rounded-pill px-3 py-2 fw-semibold" style="
+              background-color: #ffffff;
+              color: #5a6d85;
+              border: 1px solid #dceff0;
+              font-size: 12px;
+              border-radius: 20px !important;
+            ">
+            Odoo.sh Cloud Compatible
+          </span>
         </div>
 
+        <!-- CTA -->
+        <label for="tv-doc-anchor" id="tv-explore-doc"
+          class="btn px-4 py-2 fw-semibold text-decoration-none mb-0 tv-explore-btn" style="
+            background-color: #ffffff;
+            color: #2fa3a8;
+            border: 1px solid #2fa3a8;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(27, 50, 95, 0.06);
+            transition: all 0.15s ease;
+          ">
+          <i class="fa fa-book me-2"></i>
+          Explore Documentation
+        </label>
+      </div>
 
-        <!-- ══════════════════════════════════════════
-         HERO
-    ══════════════════════════════════════════ -->
-        <div
-            style="background: linear-gradient(135deg, #e6f7f8 0%, #f0fbfb 50%, #ffffff 100%); padding: 56px 24px 40px; text-align: center; position: relative;">
-            <h1
-                style="font-size: 32px; font-weight: 800; color: #2fa3a8; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0;">
-                Mail Activity Tracking for Odoo</h1>
-            <span
-                style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-            <p style="font-size: 15px; color: #3d4f61; max-width: 740px; margin: 20px auto 0; line-height: 1.8;">
-                Never wonder whether your important notifications reached their recipients.
-                <b>Techvoot's Mail Activity Tracking</b> provides real-time email notification
-                tracking directly in Odoo chatter, displaying clear status indicators beside
-                each recipient so users can quickly monitor message delivery and engagement.
-            </p>
+      <!-- ==================== RIGHT FEATURE CARD ==================== -->
+      <div class="col-lg-6 col-md-12 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 16px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 10px 30px rgba(27, 50, 95, 0.07);
+          ">
+          <div class="card-body p-3 p-lg-4">
+            <!-- Feature 1 -->
+            <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                <i class="fa fa-users"></i>
+              </div>
+
+              <div>
+                <div class="fw-bold mb-1" style="color: #1b325f">
+                  Recipient-Level Visibility
+                </div>
+
+                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                  Monitor notification delivery individually for every recipient directly in Odoo chatter.
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                <i class="fa fa-check-circle"></i>
+              </div>
+
+              <div>
+                <div class="fw-bold mb-1" style="color: #1b325f">
+                  Delivery Status Indicators
+                </div>
+
+                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                  Instant status indicators for Sent, Delivered, Opened, and Failed email notifications.
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                <i class="fa fa-comments"></i>
+              </div>
+
+              <div>
+                <div class="fw-bold mb-1" style="color: #1b325f">
+                  Native Chatter Integration
+                </div>
+
+                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                  Seamlessly integrated into standard Odoo chatter without external tools or extra tabs.
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                  width: 44px;
+                  height: 44px;
+                  background-color: #e8f8f8;
+                  color: #2fa3a8;
+                  font-size: 18px;
+                ">
+                <i class="fa fa-cubes"></i>
+              </div>
+
+              <div>
+                <div class="fw-bold mb-1" style="color: #1b325f">
+                  Multi-Edition &amp; Cloud Ready
+                </div>
+
+                <div class="small" style="color: #5a6d85; line-height: 1.6">
+                  Fully compatible and tested on Odoo 17 Community, Enterprise, and Odoo.sh cloud instances.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-        <!-- ══════════════════════════════════════════
-         PAIN → SOLUTION + STATS
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #ffffff;">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 28px;">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Overview</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                </div>
-                <div class="row justify-content-center" style="margin-bottom: 40px;">
-                    <div class="col-lg-10">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 22px 28px; box-shadow: 0 4px 20px rgba(47,163,168,.10); font-size: 15px; color: #3d4f61; line-height: 1.85;">
-                            Odoo chatter makes communication easy, but it does <b style="color: #1a2332;">not always
-                                provide clear visibility</b>
-                            into the delivery status of email notifications. Users often have no way to quickly
-                            determine
-                            whether a notification was successfully sent, delivered, opened, or encountered an issue.
-                            <br><br>
-                            <b style="color: #1a2332;">Mail Activity Tracking</b> solves this challenge by displaying
-                            intuitive email notification
-                            tracking statuses directly within the chatter. Each notified recipient is shown with a
-                            visual
-                            status indicator, allowing users to instantly monitor message delivery, improve
-                            communication
-                            transparency, and ensure important notifications reach their intended recipients. Whether
-                            you
-                            manage <b style="color: #1a2332;">internal teams or customer communications</b>, it works
-                            seamlessly for both
-                            <b style="color: #1a2332;">Community and Enterprise</b> versions, including <b
-                                style="color: #1a2332;">Odoo.sh</b>.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">100%</div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Email
-                                Notification Tracking</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">Real-Time
-                            </div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Recipient
-                                Status Visibility</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-top: 4px solid #2fa3a8; border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 18px rgba(47,163,168,.13);">
-                            <div style="font-size: 38px; font-weight: 800; color: #2fa3a8; line-height: 1;">v17</div>
-                            <div style="font-size: 14px; color: #6b7c8e; margin-top: 6px; font-weight: 600;">Compatible
-                                with Odoo 17</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- ══════════════════════════════════════════
-         KEY FEATURES
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #f0fbfb;">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 40px;">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Key Features</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                    <p
-                        style="font-size: 15px; color: #6b7c8e; max-width: 640px; margin: 10px auto 0; line-height: 1.7;">
-                        Everything your team needs to monitor email notification delivery and recipient engagement
-                        directly from Odoo chatter.</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Email Notification Tracking
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Monitor the status of
-                                    every email notification sent from Odoo chatter in real time.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-users"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Recipient-Level Visibility
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">View tracking information
-                                    individually for each notified recipient directly in the chatter.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-check-circle"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Delivery Status Indicators
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Quickly identify whether
-                                    notifications were sent, delivered, opened, or failed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-eye"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Visual Status Icons</h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Intuitive icons displayed
-                                    next to recipient names make tracking simple and user-friendly.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-comments"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Native Chatter Integration
-                                </h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Works seamlessly within
-                                    Odoo chatter without requiring external tools or additional interfaces.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card h-100 shadow-sm border-0"
-                            style="border-radius:12px; border-top:4px solid #2fa3a8; background:#ffffff;">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center justify-content-center mb-3 rounded"
-                                    style="width:52px; height:52px; background-color:#e8f8f8; color:#2fa3a8; font-size:24px;">
-                                    <i class="fa fa-shield"></i>
-                                </div>
-                                <h3 class="h5 font-weight-bold mb-2"
-                                    style="color:#1b325f; font-size:16px; font-weight:700;">Improved Communication
-                                    Transparency</h3>
-                                <p class="mb-0 small" style="color:#5a6d85; line-height:1.7;">Ensure important business
-                                    communications are tracked and monitored with confidence.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Why choose block -->
-                <div class="row justify-content-center" style="margin-top: 20px;">
-                    <div class="col-lg-10">
-                        <div
-                            style="background: #ffffff; border: 1px solid #d4edef; border-radius: 14px; padding: 32px 36px; box-shadow: 0 4px 22px rgba(0,0,0,.06);">
-                            <h3
-                                style="font-size: 20px; font-weight: 800; color: #2fa3a8; margin-top: 0; margin-bottom: 14px;">
-                                <i class="fa fa-star" style="margin-right: 8px;"></i>Why Businesses Choose This Odoo
-                                Mail Activity Tracking Module
-                            </h3>
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">Email
-                                notifications are a critical part of daily business operations in Odoo. However,
-                                standard Odoo provides limited visibility into whether recipients actually receive or
-                                interact with those notifications. This can lead to missed communications, delayed
-                                follow-ups, and uncertainty when managing customer or internal interactions.
-                            </p>
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 14px;">
-                                <b>Techvoot's Mail Activity Tracking</b> enhances Odoo chatter by providing clear,
-                                recipient-level email tracking information directly within the interface. Users can
-                                instantly identify notification delivery statuses through intuitive visual indicators,
-                                improving accountability, communication efficiency, and overall user experience.
-                            </p>
-                            <p style="font-size: 15px; color: #3d4f61; line-height: 1.85; margin-bottom: 0;">Compatible
-                                with <b>Odoo Community, Enterprise, and Odoo.sh</b>, this module integrates
-                                seamlessly into existing workflows and helps organizations maintain complete visibility
-                                over important business communications. Trusted by businesses across sales, customer
-                                support, and internal operations teams.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- ══════════════════════════════════════════
-         TABS
-    ══════════════════════════════════════════ -->
-        <div style="padding: 52px 0; background: #ffffff;">
-            <div class="container">
-                <!-- Tab Nav -->
-                <div
-                    style="background: #ffffff; border-radius: 16px 16px 0 0; padding: 8px 12px 0; box-shadow: 0 -2px 16px rgba(47,163,168,.07); display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 3px solid #e6f7f8;">
-                    <ul class="nav nav-pills justify-content-center" role="tablist"
-                        style="border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; width: 100%; gap: 6px; margin: 0; padding: 0; list-style: none;">
-                        <li style="margin: 0;">
-                            <a class="nav-link active" data-toggle="tab" data-bs-toggle="tab" href="#tab-docs"
-                                role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-book" style="margin-right: 5px;"></i> Documentation
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-release" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-tag" style="margin-right: 5px;"></i> Releases
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-faq" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-question-circle" style="margin-right: 5px;"></i> FAQs
-                            </a>
-                        </li>
-                        <li style="margin: 0;">
-                            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#tab-support" role="tab"
-                                style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; padding: 11px 22px; border-radius: 10px 10px 0 0; cursor: pointer; text-decoration: none; display: block; border: none; text-align: center;">
-                                <i class="fa fa-life-ring" style="margin-right: 5px;"></i> Support
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Tab Content -->
-                <div class="tab-content"
-                    style="background: #ffffff; border-radius: 0 0 16px 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); padding: 36px 28px; border: 1px solid #d4edef; border-top: none;">
-                    <div id="tab-docs" class="tab-pane active show" role="tabpanel">
-                        <!-- Step 1 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Open any document that supports chatter functionality and post a message to
-                                        notify recipients.</li>
-                                </ul>
-                            </div>
-                            <img src="s01.png" alt="Post Message in Chatter"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Select the recipients who should receive the email notification from the chatter
-                                        message.</li>
-                                </ul>
-                            </div>
-                            <img src="s02.png" alt="Select Email Recipients"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Send the message and allow Odoo to generate email notifications for the selected
-                                        recipients.</li>
-                                </ul>
-                            </div>
-                            <img src="s03.png" alt="Send Chatter Message"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>View the notification tracking information directly within the chatter message.
-                                    </li>
-                                </ul>
-                            </div>
-                            <img src="s04.png" alt="View Notification Tracking"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-
-                        <!-- Step 5 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 40px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Each notified recipient is displayed with an intuitive status icon indicating
-                                        the current email status.</li>
-                                </ul>
-                            </div>
-                            <img src="s05.png" alt="Recipient Status Icons"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-
-                        <!-- Step 6 -->
-                        <div style="display: block; flex-direction: column; align-items: center; margin-bottom: 10px;">
-                            <div style="width: 100%; max-width: 90%; text-align: left; margin-bottom: 16px;">
-                                <ul
-                                    style="list-style-type: disc; padding-left: 20px; margin: 0; color: #1b325f; font-size: 15px; font-weight: 500; line-height: 1.7;">
-                                    <li>Quickly monitor whether notifications were sent successfully, delivered, opened,
-                                        or encountered delivery issues.</li>
-                                </ul>
-                            </div>
-                            <img src="s06.png" alt="Monitor Delivery Status"
-                                style="width: 100%; max-width: 90%; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
-                        </div>
-                    </div>
-
-                    <!-- ── RELEASES ── -->
-                    <div id="tab-release" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div
-                            style="background: #f0fbfb; border-left: 5px solid #2fa3a8; border-radius: 10px; padding: 20px 24px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                                <i class="fa fa-code-fork"
-                                    style="color: #2fa3a8; font-size: 18px; margin-right: 8px;"></i>
-                                <span>Version 17.0.1.0</span>
-                                <span style="color: #aaa; margin: 0 5px;">|</span>
-                                <span style="color: #2fa3a8;">Released on: 09<sup>th</sup> December 2024</span>
-                            </div>
-                            <div style="padding-top: 14px; display: flex; align-items: center; gap: 10px;">
-                                <span
-                                    style="background: #2fa3a8; color: #ffffff; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 4px; margin-right: 10px;">Initial</span>
-                                <span style="font-size: 15px; color: #3d4f61;">Initial Release.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ── FAQs ── -->
-                    <div id="tab-faq" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Is This App Compatible With Odoo Community?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Yes, this app works perfectly with Odoo Community.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Is This App Compatible With Odoo Enterprise?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Yes, this app works perfectly with Odoo Enterprise.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                What Does Mail Activity Tracking Do?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                This module displays email notification tracking information directly in Odoo chatter,
-                                helping users monitor notification delivery and recipient status.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Where Can I View Email Notification Statuses?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Notification statuses are displayed directly within the chatter alongside the recipients
-                                of each message.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                What Types Of Statuses Can Be Tracked?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                The module helps users identify notification delivery statuses such as sent, delivered,
-                                opened, and other available tracking states supported by Odoo.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                Does This Module Require Additional Configuration?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                No. After installation, the tracking information becomes available directly within Odoo
-                                chatter.
-                            </div>
-                        </div>
-                        <div
-                            style="background: #f0fbfb; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #d4edef; padding: 16px 20px;">
-                            <div
-                                style="font-size: 15px; font-weight: 700; color: #1a2332; margin-bottom: 8px; display: flex; align-items: center;">
-                                <i class="fa fa-chevron-right"
-                                    style="color: #2fa3a8; font-size: 16px; margin-right: 10px;"></i>
-                                I Want Some Customization In This App. How Can I Request It?
-                            </div>
-                            <div style="padding-left: 26px; font-size: 15px; color: #3d4f61; line-height: 1.7;">
-                                Please contact us at <a href="mailto:hello@techvoot.com"
-                                    style="color: #2fa3a8; font-weight: 600; text-decoration: none;">hello@techvoot.com</a>
-                                to request customization.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ── SUPPORT ── -->
-                    <div id="tab-support" class="tab-pane fade" role="tabpanel" style="padding: 10px 0;">
-                        <div class="text-center mb-4 pb-3 border-bottom" style="border-color:#e8f8f8 !important;">
-                            <h2 class="fw-bold h3 mb-1" style="color:#1f7d82; font-weight:700;">Support &amp; Contact
-                            </h2>
-                            <p class="mb-0 small text-muted">Our team is ready to help with installation, configuration,
-                                and deployment</p>
-                        </div>
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-5 col-md-6 col-12 mb-3">
-                                <div class="card h-100 shadow-sm text-center p-4 border-2"
-                                    style="border-color:#2fa3a8; border-radius:14px; border: 2px solid #2fa3a8; background:#ffffff;">
-                                    <div class="display-4 mb-3" style="color:#2fa3a8; font-size:40px;">&#9993;</div>
-                                    <h4 class="fw-bold mb-2" style="color:#1a2332; font-weight:700;">Email Support</h4>
-                                    <p class="text-muted small mb-4" style="color:#6b7c8e; line-height:1.6;">Reach our
-                                        technical team for installation help, configuration guidance, or customization
-                                        requests. We respond within 24 hours.</p>
-                                    <a href="mailto:hello@techvoot.com" class="btn rounded-pill px-4 py-2 fw-bold"
-                                        style="background-color:#ffffff; color:#2fa3a8; border:1px solid #2fa3a8; text-decoration:none; font-weight:700; display:inline-block;">hello@techvoot.com</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-12 mb-3">
-                                <div class="card h-100 shadow-sm text-center p-4 border-2"
-                                    style="border-color:#2fa3a8; border-radius:14px; border: 2px solid #2fa3a8; background:#ffffff;">
-                                    <div class="display-4 mb-3" style="color:#2fa3a8; font-size:40px;">&#127760;</div>
-                                    <h4 class="fw-bold mb-2" style="color:#1a2332; font-weight:700;">Techvoot Solutions
-                                    </h4>
-                                    <p class="text-muted small mb-4" style="color:#6b7c8e; line-height:1.6;">Odoo
-                                        implementation, customization, consulting, and migration services for businesses
-                                        worldwide.</p>
-                                    <span class="d-inline-block rounded-pill px-4 py-2 fw-bold"
-                                        style="background-color:#ffffff; color:#2fa3a8; border:1px solid #2fa3a8; font-weight:700;">www.techvoot.com</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- end tab-content-wrap -->
-
-
-            </div>
-        </div>
-
-
-        <section style="background-color:#ffffff; border-top:1px solid #e8f8f8;">
-            <div class="container py-5">
-                <style>
-                    .tv-recommend-card {
-                        transition: transform 0.2s ease, box-shadow 0.2s ease;
-                        border: 1px solid #e8f8f8 !important;
-                    }
-
-                    .tv-recommend-card:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 10px 20px rgba(47, 163, 168, 0.1) !important;
-                        border-color: #2fa3a8 !important;
-                    }
-
-                    .tv-btn-primary {
-                        background-color: #2fa3a8 !important;
-                        color: #ffffff !important;
-                        transition: background-color 0.2s ease, transform 0.2s ease;
-                    }
-
-                    .tv-btn-primary:hover {
-                        background-color: #1f7d82 !important;
-                        color: #ffffff !important;
-                        transform: scale(1.02);
-                    }
-                </style>
-
-                <div class="row justify-content-center mb-4">
-                    <div class="col-lg-8 col-12 text-center">
-                        <span class="badge rounded-pill mb-2"
-                            style="background-color:#e8f8f8; color:#1f7d82; font-size:11px; padding:6px 14px; letter-spacing:1px; text-transform:uppercase;">More
-                            Odoo Apps</span>
-                        <h2 class="fw-bold mb-2" style="color:#2fa3a8; font-size:28px;">Recommended by Techvoot Solutions</h2>
-                        <div class="mx-auto mb-3" style="width:64px; height:4px; background-color:#2fa3a8; border-radius:4px;"></div>
-                        <p class="mb-0 text-muted" style="font-size:15px;">Discover more of our top-rated Odoo modules to streamline your business operations.</p>
-                    </div>
-                </div>
-
-                <div class="row g-4 justify-content-center mb-5">
-                    <!-- App 1: Product Barcode Generator -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_product_barcode_generate/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:32px;">
-                                    <i class="fa fa-barcode"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">Product Barcode Generator</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Automatically generate unique, standardized product barcodes using sequence rules and custom formats.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 2: Direct Print Management -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_direct_print_management/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-print"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">Direct Print Management</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Print reports, receipts, and shipping labels directly to any local, network, or thermal printer without downloading PDFs.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 3: All in One Helpdesk -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/19.0/tv_service_desk/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-ticket"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">All in One Helpdesk</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Streamline your support operations with custom stages, SLA rules, ticket priorities, and customer satisfaction tracking.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App 4: PF Challan Notepad -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <a href="https://apps.odoo.com/apps/modules/18.0/pf_challan_notepad/" target="_blank"
-                            class="text-decoration-none card h-100 shadow-sm tv-recommend-card"
-                            style="border-radius:14px; overflow: hidden; background-color:#f0fbfb; display: block;">
-                            <div class="p-4 text-center">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle"
-                                    style="width:70px; height:70px; background-color:#ffffff; border: 2px solid #2fa3a8; color:#2fa3a8; font-size:30px;">
-                                    <i class="fa fa-file-text-o"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color:#1b325f; font-size:18px;">PF Challan Notepad</h4>
-                                <p class="mb-0 text-muted small" style="line-height:1.6; min-height:64px;">
-                                    Preview and verify Provident Fund payroll contribution details before submitting official challans.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="https://apps.odoo.com/apps/modules/browse?author=Techvoot%20Solutions" target="_blank"
-                        class="d-inline-block rounded-pill px-5 py-3 fw-bold text-decoration-none tv-btn-primary shadow-sm"
-                        style="font-size:15px;">
-                        <i class="fa fa-th-large me-2"></i>Explore All Techvoot Solutions Apps
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════════
-         OUR SERVICES
-    ══════════════════════════════════════════ -->
-        <section class="md_services" style="padding: 50px 0px; background-color: transparent;">
-            <div class="container">
-                <div class="md_center text-center mb-5">
-                    <h2 style="font-size: 26px; font-weight: 800; color: #2fa3a8; margin: 0 0 6px 0;">Our Services</h2>
-                    <span
-                        style="display: block; width: 72px; height: 4px; background: linear-gradient(90deg, #2fa3a8, #7dd4d7); border-radius: 4px; margin: 14px auto 0;"></span>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-implementation" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #dfd7ff; border: 2px solid #9284d2; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="info.png" alt="Odoo Implementation" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #604eaf; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Implementation</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-customisation" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #ffcee2; border: 2px solid #c5648c; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="setting.png" alt="Odoo Customization" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #b54574; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Customization</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-consulting" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #dfe8b4; border: 2px solid #97a362; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="user.png" alt="Odoo Consulting" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #7f9037; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Consulting</span>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 text-center mb-3">
-                        <a href="https://www.techvoot.com/odoo/odoo-migration" target="_blank"
-                            class="d-block p-4 shadow rounded mb-2 box text-decoration-none"
-                            style="background-color: #eaddca; border: 2px solid #a38762; width: 100%; display: block; text-align: center; text-decoration: none;">
-                            <img src="mobileapp.png" alt="Odoo Migration" class="mx-auto d-block mb-2"
-                                style="height: 55px;">
-                            <span class="d-block font-weight-bold"
-                                style="font-size: 18px; color: #946d38; font-weight: bold; display: block; margin-top: 8px;">Odoo
-                                Migration</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ==================== BUILT FOR ENTERPRISE SCALE ==================== -->
+<section style="background-color: #ffffff">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-12 text-center">
+        <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+          Built For Enterprise Scale
+        </h2>
+        <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+        <p class="mb-0" style="color: #5a6d85">
+          Track email notification delivery and recipient status across all your Odoo records.
+        </p>
+      </div>
     </div>
 
-</body>
+    <div class="row g-3 mb-4">
+      <!-- Left Feature Card -->
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="card h-100 shadow-sm border-0 p-4" style="
+            background-color: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06) !important;
+          ">
+          <!-- Feature 1 -->
+          <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-users"></i>
+            </div>
 
-</html>
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Recipient-Level Email Tracking
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Monitor notification delivery individually for every recipient directly inside Odoo chatter.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-check-circle"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Delivery Status Indicators
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Identify whether notifications were sent, delivered, opened, or failed in real time.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-eye"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Visual Status Icons
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Intuitive visual icons next to recipient names make tracking simple and user-friendly.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Feature Card -->
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="card h-100 shadow-sm border-0 p-4" style="
+            background-color: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06) !important;
+          ">
+          <!-- Feature 1 -->
+          <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-comments"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Native Chatter Integration
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Seamlessly integrated into standard Odoo chatter across all models without external dependencies.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="d-flex align-items-start mb-4 pb-4" style="border-bottom: 1px solid #edf4f5">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-cogs"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Multi-Model Compatibility
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Works out of the box on Sales, Invoices, CRM, Tickets, and any custom record supporting chatter.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background-color: #e6f7f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-shield"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold mb-1" style="color: #1b325f">
+                Communication Transparency
+              </div>
+
+              <div class="small" style="color: #5a6d85; line-height: 1.6">
+                Gain complete confidence in important customer and vendor email communications.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat Counter Grid -->
+    <div class="row g-4 text-center">
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+            100%
+          </div>
+
+          <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+            Email Tracking
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+            4
+          </div>
+
+          <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+            Status Types
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+            Real-Time
+          </div>
+
+          <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+            Updates
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="card h-100 border-0 py-4 px-3" style="
+            border-radius: 16px;
+            background-color: #f5fbfb;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 18px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="fw-bold mb-2" style="color: #1f7d82; font-size: 32px; line-height: 1.2">
+            Odoo 17
+          </div>
+
+          <div class="fw-semibold" style="
+              color: #5a6d85;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+            ">
+            Compatible
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE MAIL ACTIVITY TRACKING ==================== -->
+<section style="background-color: #f0fbfb">
+  <div class="container py-5 px-4">
+    <!-- ==================== SECTION HEADER ==================== -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-12 text-center">
+        <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+          Why Choose Mail Activity Tracking
+        </h2>
+
+        <div class="mx-auto" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+      </div>
+    </div>
+
+    <!-- ==================== FEATURE CARDS (3x2 Grid) ==================== -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#127919;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              Instant Chatter Visibility
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Never wonder whether emails were delivered. View statuses directly beside recipient names.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#128274;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              100% Odoo 17 Compatible
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Fully tested and verified for Odoo 17 Community Edition, Enterprise Edition, and Odoo.sh.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#9889;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              Zero Configuration
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Install and start tracking immediately without needing external API keys or complex setups.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#128279;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              Recipient-Level Precision
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Track email delivery status per individual recipient for complete communication transparency.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#127760;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              Multi-Model Ready
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Works out of the box across Sales, Invoices, CRM, Helpdesk, and custom Odoo models.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 8px 25px rgba(27, 50, 95, 0.06);
+          ">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-center mb-3 rounded-3" style="
+                width: 52px;
+                height: 52px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 24px;
+              ">
+              &#128736;
+            </div>
+
+            <h3 class="h5 fw-bold mb-2" style="color: #1b325f">
+              No Dependencies
+            </h3>
+
+            <p class="mb-0 small" style="color: #5a6d85; line-height: 1.7">
+              Standalone tracking module with zero third-party software or external subscriptions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CORE FEATURES ==================== -->
+<section style="background-color: #ffffff">
+  <div class="container py-5">
+    <!-- ==================== SECTION HEADER ==================== -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-12 text-center">
+        <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+          Core Features
+        </h2>
+
+        <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+
+        <p class="mb-0" style="color: #5a6d85; line-height: 1.7">
+          Comprehensive feature set covering every aspect of modern email tracking in Odoo chatter.
+        </p>
+      </div>
+    </div>
+
+    <!-- ==================== FEATURE GRID (Compact Horizontal Cards) ==================== -->
+    <div class="row g-4">
+      <!-- Feature 1 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-envelope"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Email Notification Tracking
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                Monitor sent, delivered, opened &amp; failed statuses in real time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-users"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Recipient-Level Visibility
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                View individual recipient tracking status directly in chatter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-check-circle"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Delivery Status Indicators
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                Quickly identify whether emails were delivered, opened, or failed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-eye"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Visual Status Icons
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                Intuitive chatter icons displayed right next to recipient names.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-comments"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Native Chatter Integration
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                Works directly in standard Odoo chatter without external tools.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card h-100 border-0 p-3" style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0 !important;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+          ">
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0 rounded-3" style="
+                width: 44px;
+                height: 44px;
+                background-color: #e8f8f8;
+                color: #2fa3a8;
+                font-size: 18px;
+              ">
+              <i class="fa fa-shield"></i>
+            </div>
+
+            <div>
+              <div class="fw-bold small mb-1" style="color: #1b325f">
+                Communication Transparency
+              </div>
+
+              <p class="mb-0 small" style="color: #5a6d85">
+                Track business-critical email communications with confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TABBED SECTION (#tv-resources) ==================== -->
+<section id="tv-resources" tabindex="-1" style="
+    background-color: #f0fbfb;
+    scroll-margin-top: 80px;
+    outline: none;
+    --nav-pills-link-active-color: #ffffff;
+    --nav-pills-link-active-bg: #2fa3a8;
+    --bs-nav-pills-link-active-color: #ffffff;
+    --bs-nav-pills-link-active-bg: #2fa3a8;
+    --bs-nav-pills-border-radius: 8px;
+    --nav-pills-border-radius: 8px;
+  ">
+  <div class="container py-5 px-lg-5">
+    <div class="bg-white px-3 pt-2 shadow-sm" style="border-bottom: 1px solid #e1e7ec; border-radius: 16px 16px 0 0">
+      <ul class="nav nav-pills justify-content-center flex-wrap mb-0" id="tv-main-tabs" role="tablist" style="
+          --nav-pills-link-active-color: #ffffff;
+          --nav-pills-link-active-bg: #2fa3a8;
+          --bs-nav-pills-link-active-color: #ffffff;
+          --bs-nav-pills-link-active-bg: #2fa3a8;
+          --bs-nav-pills-border-radius: 8px 8px 0 0;
+          --nav-pills-border-radius: 8px 8px 0 0;
+        ">
+        <!-- Documentation -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active fw-semibold d-flex align-items-center gap-2" id="tab-doc-link" data-bs-toggle="tab"
+            data-bs-target="#tab-documentation" href="#tab-documentation" role="tab" aria-controls="tab-documentation"
+            aria-selected="true">
+            <i class="fa fa-book"></i>
+            <span>Documentation</span>
+          </a>
+        </li>
+
+        <!-- Releases -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-rel-link" data-bs-toggle="tab"
+            data-bs-target="#tab-releases" href="#tab-releases" role="tab" aria-controls="tab-releases"
+            aria-selected="false">
+            <i class="fa fa-tag"></i>
+            <span>Releases</span>
+          </a>
+        </li>
+
+        <!-- FAQs -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-faq-link" data-bs-toggle="tab"
+            data-bs-target="#tab-faqs" href="#tab-faqs" role="tab" aria-controls="tab-faqs" aria-selected="false">
+            <i class="fa fa-question-circle"></i>
+            <span>FAQs</span>
+          </a>
+        </li>
+
+        <!-- Support -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link fw-semibold d-flex align-items-center gap-2" id="tab-sup-link" data-bs-toggle="tab"
+            data-bs-target="#tab-support" href="#tab-support" role="tab" aria-controls="tab-support"
+            aria-selected="false">
+            <i class="fa fa-life-ring"></i>
+            <span>Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content bg-white shadow-sm p-4 p-lg-5" style="
+        border: 1px solid #d4edef;
+        border-radius: 0 0 16px 16px;
+        min-height: 420px;
+      ">
+      <!-- DOCUMENTATION TAB -->
+      <div id="tab-documentation" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-doc-link">
+        <div id="tv-doc-anchor" tabindex="-1" class="text-center mb-4 pb-3 border-bottom" style="
+            border-color: #e8f8f8 !important;
+            scroll-margin-top: 80px;
+            outline: none;
+          ">
+          <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 46px;
+              height: 46px;
+              border-radius: 12px;
+              background-color: #e6f7f8;
+              color: #2fa3a8;
+            ">
+            <i class="fa fa-book fa-lg"></i>
+          </div>
+
+          <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+            Interactive Product Documentation
+          </h2>
+
+          <p class="mb-0 small text-muted">
+            Select a feature from the sidebar only that setup guide and screenshot is shown
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-12">
+            <div class="setup-guide-sidebar" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-left: 4px solid #2fa3a8;
+                border-radius: 8px;
+                overflow: hidden;
+              ">
+              <div class="fw-bold small text-uppercase d-flex align-items-center gap-2 px-3 pt-3 pb-2" style="
+                  color: #1b325f;
+                  letter-spacing: 0.5px;
+                  background-color: #f3fafa;
+                  border-bottom: 1px solid #d4edef;
+                ">
+                <i class="fa fa-list" style="color: #2fa3a8"></i>
+                Setup Guide
+              </div>
+              <div class="overflow-auto px-2 py-3" style="max-height: 510px; scrollbar-width: thin">
+                <style>
+                  #tv-setup-tabs .nav-link {
+                    color: #2fa3a8 !important;
+                    background-color: transparent !important;
+                    border-radius: 8px !important;
+                    transition: all 0.2s ease;
+                  }
+
+                  #tv-setup-tabs .nav-link.active {
+                    color: #ffffff !important;
+                    background-color: #2fa3a8 !important;
+                    font-weight: 700 !important;
+                  }
+
+                  #tv-setup-tabs .nav-link:hover:not(.active) {
+                    background-color: #e8f8f8 !important;
+                    color: #1f7d82 !important;
+                  }
+                </style>
+                <div class="nav flex-column nav-pills" id="tv-setup-tabs" role="tablist" style="
+                    --nav-pills-link-active-color: #ffffff;
+                    --nav-pills-link-active-bg: #2fa3a8;
+                    --bs-nav-pills-link-active-color: #ffffff;
+                    --bs-nav-pills-link-active-bg: #2fa3a8;
+                    --bs-nav-pills-border-radius: 8px;
+                    --nav-pills-border-radius: 8px;
+                  ">
+                  <a href="#setup-step-1" data-bs-toggle="tab" data-bs-target="#setup-step-1" role="tab"
+                    aria-controls="setup-step-1" aria-selected="true"
+                    class="nav-link active d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-pencil me-2"></i>
+                    1. Post Message in Chatter
+                  </a>
+
+                  <a href="#setup-step-2" data-bs-toggle="tab" data-bs-target="#setup-step-2" role="tab"
+                    aria-controls="setup-step-2" aria-selected="false"
+                    class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-users me-2"></i>
+                    2. Select Email Recipients
+                  </a>
+
+                  <a href="#setup-step-3" data-bs-toggle="tab" data-bs-target="#setup-step-3" role="tab"
+                    aria-controls="setup-step-3" aria-selected="false"
+                    class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-paper-plane me-2"></i>
+                    3. Send Chatter Message
+                  </a>
+
+                  <a href="#setup-step-4" data-bs-toggle="tab" data-bs-target="#setup-step-4" role="tab"
+                    aria-controls="setup-step-4" aria-selected="false"
+                    class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-eye me-2"></i>
+                    4. View Notification Tracking
+                  </a>
+
+                  <a href="#setup-step-5" data-bs-toggle="tab" data-bs-target="#setup-step-5" role="tab"
+                    aria-controls="setup-step-5" aria-selected="false"
+                    class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-info-circle me-2"></i>
+                    5. Recipient Status Icons
+                  </a>
+
+                  <a href="#setup-step-6" data-bs-toggle="tab" data-bs-target="#setup-step-6" role="tab"
+                    aria-controls="setup-step-6" aria-selected="false"
+                    class="nav-link d-block text-start text-decoration-none mb-2 fw-semibold"
+                    style="border-radius: 8px">
+                    <i class="fa fa-check-circle me-2"></i>
+                    6. Monitor Delivery Status
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9 col-12">
+            <div class="setup-guide-content" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-radius: 8px;
+                overflow: hidden;
+              ">
+              <div class="fw-bold small text-uppercase d-flex align-items-center gap-2 px-3 pt-3 pb-2" style="
+                  color: #1b325f;
+                  letter-spacing: 0.5px;
+                  background-color: #f3fafa;
+                  border-bottom: 1px solid #d4edef;
+                ">
+                <i class="fa fa-book" style="color: #2fa3a8"></i>
+                Feature Details
+              </div>
+
+              <div class="overflow-auto px-3 py-3" style="max-height: 510px; scrollbar-width: thin">
+                <div class="tab-content" id="tv-setup-tab-content">
+                  <!-- STEP 1 -->
+                  <div id="setup-step-1" class="tab-pane fade show active tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      1. Post Message in Chatter
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        Open any document (Sale Order, Invoice, Lead, Ticket, etc.) that supports chatter functionality
+                        and post a message to notify recipients.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s01.png" alt="Post Message in Chatter" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div id="setup-step-2" class="tab-pane fade tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      2. Select Email Recipients
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        Select the recipients who should receive the email notification from the chatter message.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s02.png" alt="Select Email Recipients" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3 -->
+                  <div id="setup-step-3" class="tab-pane fade tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      3. Send Chatter Message
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        Send the message and allow Odoo to generate email notifications for the selected recipients.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s03.png" alt="Send Chatter Message" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 4 -->
+                  <div id="setup-step-4" class="tab-pane fade tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      4. View Notification Tracking
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        View the notification tracking information directly within the chatter message.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s04.png" alt="View Notification Tracking" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 5 -->
+                  <div id="setup-step-5" class="tab-pane fade tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      5. Recipient Status Icons
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        Each notified recipient is displayed with an intuitive status icon indicating the current email
+                        status.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s05.png" alt="Recipient Status Icons" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 6 -->
+                  <div id="setup-step-6" class="tab-pane fade tv-setup-panel" role="tabpanel">
+                    <h4 class="fw-bold mb-2" style="color: #1b325f">
+                      6. Monitor Delivery Status
+                    </h4>
+                    <div class="mb-5">
+                      <p class="text-muted mb-3" style="line-height: 1.75">
+                        Quickly monitor whether notifications were sent successfully, delivered, opened, or encountered
+                        delivery issues.
+                      </p>
+                      <div class="border rounded p-2 text-center"
+                        style="background-color: #ffffff; border-color: #b8e4e6">
+                        <img src="s06.png" alt="Monitor Delivery Status" class="img-fluid rounded" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELEASES TAB -->
+      <div id="tab-releases" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-rel-link">
+        <!-- Header -->
+        <div class="text-center mb-4 pb-3" style="border-bottom: 1px solid #e1e7ec">
+          <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              background-color: #e6f7f8;
+              color: #2fa3a8;
+            ">
+            <i class="fa fa-history fa-lg"></i>
+          </div>
+
+          <h2 class="fw-bold h3 mb-1" style="color: #1b325f">Release Notes</h2>
+
+          <p class="mb-0 small text-muted">
+            Version history and changelog for Mail Activity Tracking on Odoo 17
+          </p>
+        </div>
+
+        <!-- Release Summary -->
+        <div class="row g-3 justify-content-center mb-4">
+          <!-- Current Version -->
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                <i class="fa fa-code-fork fa-lg"></i>
+              </div>
+
+              <div class="ms-3">
+                <div class="small text-muted">Current Version</div>
+
+                <div class="fw-bold" style="color: #1b325f; font-size: 20px">
+                  17.0.1.0
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Latest Release -->
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                <i class="fa fa-calendar fa-lg"></i>
+              </div>
+
+              <div class="ms-3">
+                <div class="small text-muted">Latest Release Date</div>
+
+                <div class="fw-bold" style="color: #1b325f; font-size: 17px">
+                  29<sup>th</sup> June 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Release Type -->
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="h-100 d-flex align-items-center p-3" style="
+                background-color: #ffffff;
+                border: 1px solid #e1e7ec;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(27, 50, 95, 0.05);
+              ">
+              <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                <i class="fa fa-rocket fa-lg"></i>
+              </div>
+
+              <div class="ms-3">
+                <div class="small text-muted">Release Type</div>
+
+                <div class="fw-bold" style="color: #1b325f; font-size: 17px">
+                  Initial Release
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Version Timeline -->
+        <div class="p-4" style="
+            background-color: #f8fbfc;
+            border: 1px solid #e1e7ec;
+            border-radius: 12px;
+          ">
+          <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-center justify-content-center me-2" style="
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                background-color: #2fa3a8;
+                color: #ffffff;
+              ">
+              <i class="fa fa-code-fork"></i>
+            </div>
+
+            <div>
+              <h5 class="fw-bold mb-0" style="color: #1b325f">
+                Version 17.0.1.0
+              </h5>
+
+              <small class="text-muted"> 29<sup>th</sup> June 2026 </small>
+            </div>
+          </div>
+
+          <div class="ps-2">
+            <p class="mb-0 text-muted small">
+              Initial public release of Mail Activity Tracking for Odoo 17.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQS TAB -->
+      <div id="tab-faqs" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-faq-link">
+        <!-- FAQ Header -->
+        <div class="text-center mb-4 pb-3" style="border-bottom: 1px solid #e8f8f8">
+          <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 48px;
+              height: 48px;
+              border-radius: 12px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+            ">
+            <i class="fa fa-question-circle fa-lg" style="color: #2fa3a8"></i>
+          </div>
+
+          <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+            Frequently Asked Questions
+          </h2>
+
+          <p class="mb-0 small text-muted">
+            Common questions about email activity tracking, compatibility, and settings
+          </p>
+        </div>
+
+        <!-- FAQ List -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-12">
+            <!-- FAQ 1 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-cubes me-2" style="color: #2fa3a8"></i>
+                  Is This App Compatible With Odoo Community &amp; Enterprise?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                Yes. This module works perfectly with Odoo 17 Community Edition, Enterprise Edition, and Odoo.sh
+                deployments.
+              </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-envelope me-2" style="color: #2fa3a8"></i>
+                  What Does Mail Activity Tracking Do?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                This module displays email notification tracking information directly in Odoo chatter, helping users
+                monitor notification delivery and recipient status in real time.
+              </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-eye me-2" style="color: #2fa3a8"></i>
+                  Where Can I View Email Notification Statuses?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                Notification statuses are displayed directly within the chatter alongside the recipients of each
+                message.
+              </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-check-circle me-2" style="color: #2fa3a8"></i>
+                  What Types Of Statuses Can Be Tracked?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                The module helps users identify notification delivery statuses such as sent, delivered, opened, and
+                other tracking states supported by Odoo mail servers.
+              </div>
+            </details>
+
+            <!-- FAQ 5 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-sliders me-2" style="color: #2fa3a8"></i>
+                  Does This Module Require Additional Configuration?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                No. After installation, the tracking information becomes available directly within Odoo chatter
+                automatically without extra manual setup.
+              </div>
+            </details>
+
+            <!-- FAQ 6 -->
+            <details class="mb-3" style="
+                border: 1px solid #dcebed;
+                border-radius: 10px;
+                background-color: #ffffff;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(27, 50, 95, 0.05);
+              ">
+              <summary class="d-flex align-items-center justify-content-between fw-semibold" style="
+                  cursor: pointer;
+                  padding: 16px 18px;
+                  color: #1b325f;
+                  list-style: none;
+                ">
+                <span>
+                  <i class="fa fa-life-ring me-2" style="color: #2fa3a8"></i>
+                  How Do I Request Customization Or Support?
+                </span>
+
+                <i class="fa fa-question-circle ms-3" style="color: #2fa3a8; font-size: 14px"></i>
+              </summary>
+
+              <div class="px-4 pb-3 small" style="
+                  line-height: 1.7;
+                  background-color: #f3fafa;
+                  color: #1b325f;
+                  border-top: 1px solid #d4edef;
+                  padding-top: 14px !important;
+                ">
+                Please contact us at <a href="mailto:hello@techvoot.com" class="fw-semibold text-decoration-none"
+                  style="color: #2fa3a8 !important">hello@techvoot.com</a> to request customization or technical
+                guidance.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPPORT TAB -->
+      <div id="tab-support" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-sup-link">
+        <div class="text-center mb-4 pb-3 border-bottom" style="border-color: #e8f8f8 !important">
+          <div class="d-inline-flex align-items-center justify-content-center mb-2" style="
+              width: 46px;
+              height: 46px;
+              border-radius: 12px;
+              background-color: #e6f7f8;
+              color: #2fa3a8;
+            ">
+            <i class="fa fa-life-ring fa-lg"></i>
+          </div>
+
+          <h2 class="fw-bold h3 mb-1" style="color: #1b325f">
+            Support &amp; Contact
+          </h2>
+
+          <p class="mb-0 small text-muted" style="color: #1b325f">
+            Our team is ready to help with installation, configuration, and
+            deployment
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-5 col-md-6 col-12">
+            <div class="h-100 p-4 text-center d-flex align-items-center flex-column" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-top: 4px solid #1f7d82;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(27, 50, 95, 0.08);
+              ">
+              <div class="d-inline-flex align-items-center justify-content-center mb-3" style="
+                  width: 52px;
+                  height: 52px;
+                  border-radius: 12px;
+                  background-color: #e6f7f8;
+                  color: #2fa3a8;
+                ">
+                <i class="fa fa-envelope fa-lg"></i>
+              </div>
+
+              <h4 class="fw-bold mb-2" style="color: #1b325f">Email Support</h4>
+
+              <p class="text-muted small mb-4">
+                Reach our technical team for installation help, configuration
+                guidance, or customization requests. We respond within 24 hours.
+              </p>
+
+              <a href="mailto:hello@techvoot.com"
+                class="d-inline-flex align-items-center justify-content-center text-decoration-none fw-semibold" style="
+                  background-color: #f0fbfb;
+                  color: #2fa3a8;
+                  border: 1px solid #d4edef;
+                  border-radius: 8px;
+                  padding: 10px 18px;
+                  font-size: 13px;
+                  margin-top: auto;
+                ">
+                <i class="fa fa-envelope me-2"></i>
+                hello@techvoot.com
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 col-12">
+            <div class="h-100 p-4 text-center d-flex align-items-center flex-column" style="
+                background-color: #ffffff;
+                border: 1px solid #d4edef;
+                border-top: 4px solid #1f7d82;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(27, 50, 95, 0.08);
+              ">
+              <div class="d-inline-flex align-items-center justify-content-center mb-3" style="
+                  width: 52px;
+                  height: 52px;
+                  border-radius: 12px;
+                  background-color: #e6f7f8;
+                  color: #1f7d82;
+                ">
+                <i class="fa fa-globe fa-lg"></i>
+              </div>
+
+              <h4 class="fw-bold mb-2" style="color: #1b325f">
+                Techvoot Solutions
+              </h4>
+
+              <p class="text-muted small mb-4">
+                Odoo implementation, customization, consulting, and migration
+                services for businesses worldwide.
+              </p>
+
+              <a href="https://www.techvoot.com" target="_blank"
+                class="d-inline-flex align-items-center justify-content-center text-decoration-none fw-semibold" style="
+                  background-color: #f0fbfb;
+                  color: #2fa3a8;
+                  border: 1px solid #d4edef;
+                  border-radius: 8px;
+                  padding: 10px 18px;
+                  font-size: 13px;
+                  margin-top: auto;
+                ">
+                <i class="fa fa-globe me-2"></i>
+                www.techvoot.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var resources = document.getElementById('tv-resources');
+        if (!resources) return;
+
+        function activateMainTab(link) {
+          if (!link) return;
+          var targetSel = link.getAttribute('data-bs-target') || link.getAttribute('href');
+          if (!targetSel) return;
+          var pane = resources.querySelector(targetSel);
+          if (!pane) return;
+          resources.querySelectorAll('.tab-pane:not(.tv-setup-panel)').forEach(function (p) {
+            p.classList.remove('show', 'active');
+          });
+          resources.querySelectorAll('#tv-main-tabs .nav-link').forEach(function (l) {
+            l.classList.remove('active');
+          });
+          pane.classList.add('show', 'active');
+          link.classList.add('active');
+        }
+
+        function activateSideTab(link) {
+          if (!link) return;
+          var targetSel = link.getAttribute('data-bs-target') || link.getAttribute('href');
+          if (!targetSel) return;
+          var pane = resources.querySelector(targetSel);
+          if (!pane) return;
+          resources.querySelectorAll('#tab-documentation .tab-pane').forEach(function (p) {
+            p.classList.remove('show', 'active');
+          });
+          resources.querySelectorAll('#tv-setup-tabs .nav-link').forEach(function (l) {
+            l.classList.remove('active');
+          });
+          pane.classList.add('show', 'active');
+          link.classList.add('active');
+        }
+
+        resources.querySelectorAll('#tv-main-tabs [data-bs-toggle="tab"]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            activateMainTab(link);
+          });
+        });
+
+        resources.querySelectorAll('#tv-setup-tabs [data-bs-toggle="tab"]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            activateSideTab(link);
+          });
+        });
+
+        document.querySelectorAll('.tv-explore-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var docLink = resources.querySelector('#tab-doc-link');
+            var anchor = document.getElementById('tv-doc-anchor');
+            activateMainTab(docLink);
+            if (resources.scrollIntoView) {
+              resources.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            if (anchor) {
+              setTimeout(function () {
+                anchor.focus({ preventScroll: true });
+              }, 350);
+            }
+          });
+        });
+      })();
+    </script>
+  </div>
+</section>
+
+<!-- ==================== RECOMMENDED APPS ==================== -->
+<section style="background-color: #ffffff; border-top: 1px solid #e8f8f8">
+  <div class="container py-5">
+    <style>
+      .tv-recommend-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .tv-recommend-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(27, 50, 95, 0.08) !important;
+      }
+    </style>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-12 text-center">
+        <span class="badge rounded-pill mb-2" style="
+            background-color: #e8f8f8;
+            color: #1f7d82;
+            font-size: 11px;
+            padding: 6px 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          ">More Odoo Apps</span>
+        <h2 class="fw-bold mb-2" style="color: #1b325f; font-size: 28px">
+          Recommended by Techvoot Solutions
+        </h2>
+        <div class="mx-auto mb-3" style="
+            width: 64px;
+            height: 4px;
+            background-color: #2fa3a8;
+            border-radius: 4px;
+          "></div>
+        <p class="mb-0 text-muted" style="font-size: 15px">
+          Discover more of our top-rated Odoo modules to streamline your
+          business operations.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 col-12">
+        <!-- ==================== APP 1 ==================== -->
+        <a href="https://apps.odoo.com/apps/modules/17.0/tv_service_desk/" target="_blank"
+          class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+          style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+          <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+            style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+            <i class="fa fa-life-ring"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+              All In One Helpdesk Management
+            </div>
+            <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+              Complete ticketing system, SLA policy engine, customer portal, timesheet tracking, and multi-team support
+              desk for Odoo 17.
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+            style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+
+        <!-- ==================== APP 2 ==================== -->
+        <a href="https://apps.odoo.com/apps/modules/17.0/tv_ai_description_enhancer/" target="_blank"
+          class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+          style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+          <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+            style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+            <i class="fa fa-pencil-square-o"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+              AI Copywriter &amp; Description Enhancer
+            </div>
+            <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+              AI-powered text refinement, tone adjustment, multi-language translation, and grammar corrections for Odoo
+              description fields.
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+            style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+
+        <!-- ==================== APP 3 ==================== -->
+        <a href="https://apps.odoo.com/apps/modules/17.0/tv_product_barcode_generate/" target="_blank"
+          class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-3"
+          style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+          <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+            style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+            <i class="fa fa-barcode"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+              Product Barcode Generator
+            </div>
+            <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+              Automatically generate unique, standardized product barcodes using sequence rules and custom formats.
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+            style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+
+        <!-- ==================== APP 4 ==================== -->
+        <a href="https://apps.odoo.com/apps/modules/17.0/tv_direct_print_management/" target="_blank"
+          class="text-decoration-none d-flex flex-column flex-md-row align-items-center text-center text-md-start tv-recommend-card mb-0"
+          style="
+            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #dceff0;
+            border-left: 4px solid #2fa3a8;
+            box-shadow: 0 6px 20px rgba(27, 50, 95, 0.05);
+            padding: 18px 20px;
+          ">
+          <div class="d-flex align-items-center justify-content-center me-md-3 mb-3 mb-md-0 flex-shrink-0 rounded-3"
+            style="
+              width: 44px;
+              height: 44px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 18px;
+            ">
+            <i class="fa fa-print"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="fw-bold mb-1" style="color: #1b325f; font-size: 16px">
+              Direct Print Management
+            </div>
+            <div class="small mb-0" style="color: #5a6d85; line-height: 1.6">
+              Print reports, receipts, and shipping labels directly to any local, network, or thermal printer without
+              downloading PDFs.
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0 ms-md-3 mt-3 mt-md-0 rounded-3"
+            style="
+              width: 36px;
+              height: 36px;
+              background-color: #e8f8f8;
+              color: #2fa3a8;
+              font-size: 14px;
+            ">
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="https://apps.odoo.com/apps/modules/browse?author=Techvoot%20Solutions" target="_blank"
+        class="d-inline-flex align-items-center justify-content-center gap-2 fw-semibold text-decoration-none" style="
+          color: #2fa3a8;
+          background-color: #ffffff;
+          border: 1px solid #2fa3a8;
+          border-radius: 10px;
+          padding: 12px 24px;
+          font-size: 14px;
+          box-shadow: 0 4px 12px rgba(27, 50, 95, 0.06);
+          transition: all 0.2s ease;
+        ">
+        <i class="fa fa-th-large"></i>
+        <span>Explore All Techvoot Solutions Apps</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<section style="background-color: #f5fbfb; border-top: 1px solid #dceff0">
+  <div class="px-3 py-2 mx-auto" style="max-width: 1140px">
+    <div
+      class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+      <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center justify-content-center" style="
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: #e7f7f7;
+            color: #2fa3a8;
+          ">
+          <i class="fa fa-envelope-o"></i>
+        </div>
+
+        <span class="fw-semibold" style="color: #1b325f; font-size: 14px">
+          Mail Activity Tracking
+        </span>
+      </div>
+
+      <div class="small" style="color: #5a6d85; font-size: 12px">
+        &copy; 2026 Techvoot Solutions
+        <span style="color: #2fa3a8">&bull;</span>
+        Built for Odoo 17
+      </div>
+    </div>
+  </div>
+</section>
